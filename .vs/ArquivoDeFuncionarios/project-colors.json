@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0e3a6384-e178-4e49-9f58-86a44785c9db": {
+      "ProjectGuid": "0e3a6384-e178-4e49-9f58-86a44785c9db",
+      "DisplayName": "ArquivoDeFuncionarios",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

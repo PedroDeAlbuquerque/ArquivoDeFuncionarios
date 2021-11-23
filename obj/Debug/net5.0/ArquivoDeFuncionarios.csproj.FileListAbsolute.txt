@@ -1,0 +1,16 @@
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\obj\Debug\net5.0\ArquivoDeFuncionarios.csproj.AssemblyReference.cache
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\obj\Debug\net5.0\ArquivoDeFuncionarios.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\obj\Debug\net5.0\ArquivoDeFuncionarios.AssemblyInfoInputs.cache
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\obj\Debug\net5.0\ArquivoDeFuncionarios.AssemblyInfo.cs
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\obj\Debug\net5.0\ArquivoDeFuncionarios.csproj.CoreCompileInputs.cache
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\bin\Debug\net5.0\ArquivoDeFuncionarios.exe
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\bin\Debug\net5.0\ArquivoDeFuncionarios.deps.json
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\bin\Debug\net5.0\ArquivoDeFuncionarios.runtimeconfig.json
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\bin\Debug\net5.0\ArquivoDeFuncionarios.runtimeconfig.dev.json
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\bin\Debug\net5.0\ArquivoDeFuncionarios.dll
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\bin\Debug\net5.0\ref\ArquivoDeFuncionarios.dll
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\bin\Debug\net5.0\ArquivoDeFuncionarios.pdb
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\obj\Debug\net5.0\ArquivoDeFuncionarios.dll
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\obj\Debug\net5.0\ref\ArquivoDeFuncionarios.dll
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\obj\Debug\net5.0\ArquivoDeFuncionarios.pdb
+C:\workspace\estudo_c#\ArquivoDeFuncionarios\obj\Debug\net5.0\ArquivoDeFuncionarios.genruntimeconfig.cache
