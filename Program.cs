@@ -11,8 +11,11 @@ namespace ArquivoDeFuncionarios
             //ArmazenadorDeDados controlador = new();
             //controlador.DefinirEArmazenarDadosDoFuncionario();
 
-            LeitorDeDados controlador = new();
-            controlador.DefinirRGELerArquivoDeFuncionario();
+            //LeitorDeDados controlador = new();
+            //controlador.DefinirRGELerArquivoDeFuncionario();
+
+            //DeletorDeDados controlador = new();
+            //controlador.DeletarArquivoDeFuncionario();
         }
     }
 }

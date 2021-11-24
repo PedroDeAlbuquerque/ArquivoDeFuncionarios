@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArquivoDeFuncionarios
 {
     internal class LeitorDeDados
     {
         private readonly FiltroDeDados filtroDeDados = new();
-
 
         public void DefinirRGELerArquivoDeFuncionario()
         {
@@ -35,7 +30,7 @@ namespace ArquivoDeFuncionarios
             return inputDoUsuario;
         }
 
-        private Boolean LerArquivoDeFuncionario(string rgParaLeituraDeArquivo)
+        private static Boolean LerArquivoDeFuncionario(string rgParaLeituraDeArquivo)
         {
             try
             {
@@ -46,7 +41,7 @@ namespace ArquivoDeFuncionarios
 
                 return true;
             }
-            catch (FileNotFoundException erro)
+            catch (FileNotFoundException)
             {
                 Console.WriteLine("Não foi possível encontrar o funcionário com o rg digitado, por favor, insira um rg existente.");
 
