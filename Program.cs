@@ -8,8 +8,11 @@ namespace ArquivoDeFuncionarios
     {
         static void Main(string[] args)
         {
-            ArmazenadorDeDados controlador = new();
-            controlador.DefinirEArmazenarDadosDoFuncionario();
+            //ArmazenadorDeDados controlador = new();
+            //controlador.DefinirEArmazenarDadosDoFuncionario();
+
+            LeitorDeDados controlador = new();
+            controlador.DefinirRGELerArquivoDeFuncionario();
         }
     }
 }
