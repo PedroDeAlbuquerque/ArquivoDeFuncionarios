@@ -13,6 +13,9 @@ namespace ArquivoDeFuncionarios
             do
             {
                 rgParaDeletarDeArquivo = DefinirRGDeFuncionarioParaDeletarDeArquivo();
+
+                if (ChecarVoltaParaPassoAnterior(rgParaDeletarDeArquivo))
+                    break;
             }
             while (!ChecarExistenciaEDeletarArquivoDeFuncionario(rgParaDeletarDeArquivo));
         }
@@ -24,10 +27,23 @@ namespace ArquivoDeFuncionarios
             {
                 Console.WriteLine("Insira o RG do funcionário que será excluído:");
                 inputDoUsuario = Console.ReadLine();
+
+                ControladorDeFuncionarios.ChecarSaidaDoSistema(inputDoUsuario);
+
+                if (ChecarVoltaParaPassoAnterior(inputDoUsuario))
+                    break;
             }
             while (!filtroDeDados.FiltrarDado(Funcionario.CampoDeDados.RG, inputDoUsuario));
 
             return inputDoUsuario;
+        }
+
+        private static Boolean ChecarVoltaParaPassoAnterior(string inputDoUsuario)
+        {
+            if (inputDoUsuario == "voltar")
+                return true;
+            else
+                return false;
         }
 
         private static Boolean ChecarExistenciaEDeletarArquivoDeFuncionario(string rgParaDeletarArquivo)

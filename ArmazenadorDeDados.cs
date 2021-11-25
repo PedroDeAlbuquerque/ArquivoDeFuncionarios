@@ -20,10 +20,13 @@ namespace ArquivoDeFuncionarios
         {
             Funcionario novoFuncionario = new();
 
-            while (this.EtapaDeArmazenamento <= (int) Funcionario.CampoDeDados.Salario)
+            while ((this.EtapaDeArmazenamento <= (int) Funcionario.CampoDeDados.Salario) && (this.EtapaDeArmazenamento > -1))
             {
                 switch (this.EtapaDeArmazenamento)
                 {
+                    case -1:
+                        novoFuncionario.Nome = "voltar";
+                        break;
                     case (int) Funcionario.CampoDeDados.Nome:
                         novoFuncionario.Nome = DefinirCampoDoFuncionario();
                         break;
@@ -45,13 +48,22 @@ namespace ArquivoDeFuncionarios
             return novoFuncionario;
         }
 
-        private static async void ArmazenarDadosDoFuncionario(Funcionario funcionario)
+        private async void ArmazenarDadosDoFuncionario(Funcionario funcionario)
         {
-            string textoParaArmazenamento = MontarTextoDeDadosParaArmazenamento(funcionario);
+            Boolean usuarioVoltouParaOMenuInicial = ChecarVoltaParaPassoAnterior(funcionario.Nome);
 
-            await File.WriteAllTextAsync($"arquivo/{funcionario.RG}.txt", textoParaArmazenamento);
+            if (!usuarioVoltouParaOMenuInicial)
+            {
+                string textoParaArmazenamento = MontarTextoDeDadosParaArmazenamento(funcionario);
 
-            Console.WriteLine("Dados do funcionário armazenado com sucesso!");
+                await File.WriteAllTextAsync($"arquivo/{funcionario.RG}.txt", textoParaArmazenamento);
+
+                Console.WriteLine("Dados do funcionário armazenado com sucesso!");
+            }
+            else
+            {
+                this.EtapaDeArmazenamento = 0;
+            }
         }
 
         private string DefinirCampoDoFuncionario()
@@ -66,6 +78,8 @@ namespace ArquivoDeFuncionarios
                 string campo = CampoDaEtapaAtual.ToString().ToLower();
                 Console.WriteLine($"Digite o {campo} do novo funcionário:");
                 inputDoUsuario = Console.ReadLine();
+
+                ControladorDeFuncionarios.ChecarSaidaDoSistema(inputDoUsuario);
 
                 usuarioVoltouParaOPassoAnterior = ChecarVoltaParaPassoAnterior(inputDoUsuario);
                 if (usuarioVoltouParaOPassoAnterior)
@@ -93,7 +107,7 @@ namespace ArquivoDeFuncionarios
             else
                 this.EtapaDeArmazenamento--;
 
-            this.EtapaDeArmazenamento = Math.Clamp(this.EtapaDeArmazenamento, (int) Funcionario.CampoDeDados.Nome, ((int) Funcionario.CampoDeDados.Salario) + 1);
+            this.EtapaDeArmazenamento = Math.Clamp(this.EtapaDeArmazenamento, -1, ((int) Funcionario.CampoDeDados.Salario) + 1);
         }
 
         private static string MontarTextoDeDadosParaArmazenamento(Funcionario funcionario)

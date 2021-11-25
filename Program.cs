@@ -1,21 +1,11 @@
-﻿using System;
-using System.IO;
-using System.Text.RegularExpressions;
-
-namespace ArquivoDeFuncionarios
+﻿namespace ArquivoDeFuncionarios
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            //ArmazenadorDeDados controlador = new();
-            //controlador.DefinirEArmazenarDadosDoFuncionario();
-
-            //LeitorDeDados controlador = new();
-            //controlador.DefinirRGELerArquivoDeFuncionario();
-
-            //DeletorDeDados controlador = new();
-            //controlador.DeletarArquivoDeFuncionario();
+            ControladorDeFuncionarios controlador = new();
+            controlador.executarArquivoDeFuncionarios();
         }
     }
 }
