@@ -9,12 +9,15 @@ namespace ArquivoDeFuncionarios
 
         public void DefinirRGELerArquivoDeFuncionario()
         {
+            ControladorDeFuncionarios.LimparConsoleEAlternarSuaCorDoTexto(ConsoleColor.Blue);
+
+
             string rgParaLeituraDeArquivo;
             do
             {
                 rgParaLeituraDeArquivo = DefinirRGDeFuncionarioParaLeituraDeArquivo();
 
-                if (ChecarVoltaParaPassoAnterior(rgParaLeituraDeArquivo))
+                if (ControladorDeFuncionarios.ChecarVoltaParaPassoAnterior(rgParaLeituraDeArquivo))
                     break;
             }
             while (!LerArquivoDeFuncionario(rgParaLeituraDeArquivo));
@@ -30,20 +33,12 @@ namespace ArquivoDeFuncionarios
 
                 ControladorDeFuncionarios.ChecarSaidaDoSistema(inputDoUsuario);
 
-                if (ChecarVoltaParaPassoAnterior(inputDoUsuario))
+                if (ControladorDeFuncionarios.ChecarVoltaParaPassoAnterior(inputDoUsuario))
                     break;
             }
             while (!filtroDeDados.FiltrarDado(Funcionario.CampoDeDados.RG, inputDoUsuario));
 
             return inputDoUsuario;
-        }
-
-        private static Boolean ChecarVoltaParaPassoAnterior(string inputDoUsuario)
-        {
-            if (inputDoUsuario == "voltar")
-                return true;
-            else
-                return false;
         }
 
         private static Boolean LerArquivoDeFuncionario(string rgParaLeituraDeArquivo)

@@ -11,6 +11,8 @@ namespace ArquivoDeFuncionarios
 
         public void DefinirEArmazenarDadosDoFuncionario()
         {
+            ControladorDeFuncionarios.LimparConsoleEAlternarSuaCorDoTexto(ConsoleColor.Green);
+
             Funcionario novoFuncionario = DefinirDadosDoFuncionario();
 
             ArmazenarDadosDoFuncionario(novoFuncionario);
@@ -50,7 +52,7 @@ namespace ArquivoDeFuncionarios
 
         private async void ArmazenarDadosDoFuncionario(Funcionario funcionario)
         {
-            Boolean usuarioVoltouParaOMenuInicial = ChecarVoltaParaPassoAnterior(funcionario.Nome);
+            Boolean usuarioVoltouParaOMenuInicial = ControladorDeFuncionarios.ChecarVoltaParaPassoAnterior(funcionario.Nome);
 
             if (!usuarioVoltouParaOMenuInicial)
             {
@@ -81,7 +83,7 @@ namespace ArquivoDeFuncionarios
 
                 ControladorDeFuncionarios.ChecarSaidaDoSistema(inputDoUsuario);
 
-                usuarioVoltouParaOPassoAnterior = ChecarVoltaParaPassoAnterior(inputDoUsuario);
+                usuarioVoltouParaOPassoAnterior = ControladorDeFuncionarios.ChecarVoltaParaPassoAnterior(inputDoUsuario);
                 if (usuarioVoltouParaOPassoAnterior)
                     break;
             }
@@ -90,14 +92,6 @@ namespace ArquivoDeFuncionarios
             AtualizarEtapaDeArmazenamento(usuarioVoltouParaOPassoAnterior);
 
             return inputDoUsuario;
-        }
-
-        private static Boolean ChecarVoltaParaPassoAnterior(string inputDoUsuario)
-        {
-            if (inputDoUsuario == "voltar")
-                return true;
-            else
-                return false;
         }
 
         private void AtualizarEtapaDeArmazenamento(Boolean usuarioVoltouParaOPassoAnterior)

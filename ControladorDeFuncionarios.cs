@@ -19,6 +19,7 @@ namespace ArquivoDeFuncionarios
         {
             while (true)
             {
+                LimparConsoleEAlternarSuaCorDoTexto(ConsoleColor.Yellow);
                 MostrarMensagemDeOpcoes();
                 this.OpcaoDoUsuario = SelecionarOpcaoDoSistema();
                 ExecutarFuncionalidadeDoSistemaBaseadoNaOpcaoDoUsuario();
@@ -91,13 +92,28 @@ namespace ArquivoDeFuncionarios
             }
         }
 
+        public static Boolean ChecarVoltaParaPassoAnterior(string inputDoUsuario)
+        {
+            if (inputDoUsuario == "voltar")
+                return true;
+            else
+                return false;
+        }
+
         public static void ChecarSaidaDoSistema(string inputDoUsuario)
         {
             if (inputDoUsuario == "sair")
             {
+                LimparConsoleEAlternarSuaCorDoTexto(ConsoleColor.Yellow);
                 Console.WriteLine("Obrigado por utilizar este sistema.");
                 Environment.Exit(0);
             }
+        }
+
+        public static void LimparConsoleEAlternarSuaCorDoTexto(ConsoleColor corDoTexto)
+        {
+            Console.Clear();
+            Console.ForegroundColor = corDoTexto;
         }
     }
 }

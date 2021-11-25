@@ -9,12 +9,14 @@ namespace ArquivoDeFuncionarios
 
         public void DeletarArquivoDeFuncionario()
         {
+            ControladorDeFuncionarios.LimparConsoleEAlternarSuaCorDoTexto(ConsoleColor.Red);
+
             string rgParaDeletarDeArquivo;
             do
             {
                 rgParaDeletarDeArquivo = DefinirRGDeFuncionarioParaDeletarDeArquivo();
 
-                if (ChecarVoltaParaPassoAnterior(rgParaDeletarDeArquivo))
+                if (ControladorDeFuncionarios.ChecarVoltaParaPassoAnterior(rgParaDeletarDeArquivo))
                     break;
             }
             while (!ChecarExistenciaEDeletarArquivoDeFuncionario(rgParaDeletarDeArquivo));
@@ -30,20 +32,12 @@ namespace ArquivoDeFuncionarios
 
                 ControladorDeFuncionarios.ChecarSaidaDoSistema(inputDoUsuario);
 
-                if (ChecarVoltaParaPassoAnterior(inputDoUsuario))
+                if (ControladorDeFuncionarios.ChecarVoltaParaPassoAnterior(inputDoUsuario))
                     break;
             }
             while (!filtroDeDados.FiltrarDado(Funcionario.CampoDeDados.RG, inputDoUsuario));
 
             return inputDoUsuario;
-        }
-
-        private static Boolean ChecarVoltaParaPassoAnterior(string inputDoUsuario)
-        {
-            if (inputDoUsuario == "voltar")
-                return true;
-            else
-                return false;
         }
 
         private static Boolean ChecarExistenciaEDeletarArquivoDeFuncionario(string rgParaDeletarArquivo)
