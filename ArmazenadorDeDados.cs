@@ -61,6 +61,8 @@ namespace ArquivoDeFuncionarios
                 await File.WriteAllTextAsync($"arquivo/{funcionario.RG}.txt", textoParaArmazenamento);
 
                 Console.WriteLine("Dados do funcionário armazenado com sucesso!");
+
+                Console.ReadKey();
             }
             else
             {

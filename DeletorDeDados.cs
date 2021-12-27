@@ -48,6 +48,8 @@ namespace ArquivoDeFuncionarios
             {
                 File.Delete($"arquivo/{rgParaDeletarArquivo}.txt");
                 Console.WriteLine("Funcionário removido com sucesso!");
+
+                Console.ReadKey();
             }
             else
             {

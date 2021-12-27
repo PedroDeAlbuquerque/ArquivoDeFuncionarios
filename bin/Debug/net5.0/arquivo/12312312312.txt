@@ -1,0 +1,8 @@
+######################################
+Nome: teste
+Email: teste@teste.com
+RG: 12312312312
+Telefone: 99999999
+Salário: 3000
+Salário corrigido: 3200
+######################################

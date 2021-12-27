@@ -50,6 +50,8 @@ namespace ArquivoDeFuncionarios
                 Console.WriteLine("Dados do funcionário:");
                 Console.WriteLine(textoParaLeitura);
 
+                Console.ReadKey();
+
                 return true;
             }
             catch (FileNotFoundException)
